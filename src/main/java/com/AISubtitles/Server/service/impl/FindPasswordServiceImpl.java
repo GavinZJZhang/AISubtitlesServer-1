@@ -37,18 +37,16 @@ public class FindPasswordServiceImpl implements FindPasswordService {
 	@Autowired
 	private TokenService tokenService;
 
-	User user = new User();
-	User userE = new User();
-	User userEN = new User();
+
 	/**
 	 * 修改用户密码
 	 */
 	@Override
-	public Result update(String newpassword) {
+	public Result update(String newPassword) {
 		Result resultUser = new Result();
 		int userId = TokenUtil.getTokenUserId();
 		System.out.println(userId);
-		Integer success = userAuthsDao.update(Md5Utils.md5(newpassword), userId);
+		Integer success = userAuthsDao.update(Md5Utils.md5(newPassword), userId);
 		if (success > 0) {
 			resultUser.setCode(CodeConsts.CODE_SUCCESS);
 		}
@@ -108,13 +106,15 @@ public class FindPasswordServiceImpl implements FindPasswordService {
 	 * 查询用户信息
 	 */
 	@Override
-	public Result select(String accountnum) {
+	public Result select(String accountNum) {
 		Result resultUser = new Result();
-		
-		userE = userDao.findByUserEmail(accountnum);
-		userEN = userDao.findByUserEmailOrUserPhoneNumber(accountnum, accountnum);
-		int countuEmail = userDao.countByUserEmail(accountnum);
-		int countuPhoneNumber = userDao.countByUserPhoneNumber(accountnum);
+		//User user = new User();
+		//User userE = new User();
+		//User userEN = new User();
+		//User userE = userDao.findByUserEmail(accountNum);
+		User userEN = userDao.findByUserEmailOrUserPhoneNumber(accountNum, accountNum);
+		int countuEmail = userDao.countByUserEmail(accountNum);
+		int countuPhoneNumber = userDao.countByUserPhoneNumber(accountNum);
 		if (countuEmail > 0 || countuPhoneNumber > 0) {
 			resultUser.setCode(CodeConsts.CODE_SUCCESS);
 			resultUser.setData(userEN);

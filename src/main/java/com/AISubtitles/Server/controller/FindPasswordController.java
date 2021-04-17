@@ -19,7 +19,7 @@ import com.AISubtitles.Server.domain.Result;
  * 
  * @author Gavin
  * session保存服务器发送的验证码 | redis存储session（规划中）
- * 写在前面：为了安全性，发送验证码后不能再修改邮箱（eg：点击发送验证码跳转页面）:目前后台漏洞
+ * //写在前面：为了安全性，发送验证码后不能再修改邮箱（eg：点击发送验证码跳转页面）:目前后台漏洞
  *
  */
 @Controller
@@ -66,7 +66,7 @@ public class FindPasswordController {
     /**
      * 修改密码
      * 
-     * @param password
+     * @param //password
      * @param newpassword
      * @return
      */

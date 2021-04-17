@@ -3,7 +3,7 @@ package com.AISubtitles.common;
 public class CodeConsts {
 
 
-    //注册成功，登陆成功，修改个人信息成功
+    //注册成功，登陆成功，修改个人信息成功，查询用户信息成功
     public static final int CODE_SUCCESS = 200;
 
     //没有访问权限，请登录

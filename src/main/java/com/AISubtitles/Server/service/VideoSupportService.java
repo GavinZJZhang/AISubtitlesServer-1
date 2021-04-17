@@ -195,7 +195,7 @@ public class VideoSupportService {
      * @return 是否成功
      * @throws IOException
      * @throws InterruptedException
-     * @author PY
+     * @author PY,Gavin
      */
     public  Boolean exportAudio(int videoId) {
         video = videoDao.findById(videoId).get();
@@ -226,7 +226,8 @@ public class VideoSupportService {
      * @return 是否成功
      * @throws IOException
      * @throws InterruptedException
-     * @author PY
+     * @author PY,Gavin
+     *
      */
     public  Result importSubtitle(int videoId , String type) {
         Result result = new Result();

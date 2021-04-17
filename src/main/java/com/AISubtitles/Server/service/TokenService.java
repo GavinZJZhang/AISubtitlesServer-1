@@ -8,6 +8,9 @@ import com.auth0.jwt.algorithms.Algorithm;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * @author ZhangYuhao
+ */
 @Service("TokenService")
 public class TokenService {
     public String getToken(UserAuths userAuths) {

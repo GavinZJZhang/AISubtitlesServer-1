@@ -20,11 +20,11 @@ public interface FindPasswordService {
     /**
      * 修改用户密码
      * 
-     * @param password
-     * @param newpassword
+     * @param //password
+     * @param newPassWord
      * @return
      */
-    public Result<User> update(String newpassword);
+    public Result<User> update(String newPassWord);
 
     /**
      * 验证邮箱验证码
@@ -47,9 +47,10 @@ public interface FindPasswordService {
     /**
      * 查询用户信息
      * 
-     * @param request
+     * @param //request
+     * @param accountNum
      * @return
      */
-    public Result<User> select(String accountnum);
+    public Result<User> select(String accountNum);
 
 }
